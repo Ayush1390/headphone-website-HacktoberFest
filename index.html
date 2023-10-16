@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT 2</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <nav class="navbar">
-        
-            <img src="./logo.png" alt="">
-        
+
+        <img src="./logo.png" alt="">
+
         <ul class="items">
             <li><a href="#">Blog</a></li>
             <li> <a href="#">Calm Playlist</a> </li>
             <li><a href="#">Join Calm</a></li>
         </ul>
     </nav>
-    <section class="main">
+
+    <nav class="mobile-navbar">
+        <img src="./logo.png" alt="">
+        <i class="fa-solid fa-bars menu"></i>
+    </nav>
+
+    <ul class="mobile-items hidden">
+        <li><a href="#">Blog</a></li>
+        <li> <a href="#">Calm Playlist</a> </li>
+        <li><a href="#">Join Calm</a></li>
+    </ul>
+
+    <main class="main">
         <div class="main-left-section">
             <!-- content -->
             <div class="dark">
@@ -28,21 +42,26 @@
             </div>
             <!-- button -->
             <div class="but">
-                <button>
-                  <a href=#""> Learn more</a>
-                </button>
+
+                <a href="#"><button id="learn-more">Learn more</button></a>
+
             </div>
         </div>
         <div class="main-right-section">
             <!-- images -->
-            <div class="upper">
-                <img src="./img1.png" alt="" class="first">
-                <img src="./img2.png" alt="" class="second">
-            </div>
-            <div class="lower">
-                <img src="./img3.png" alt="">
+            <div class="img-container">
+                <div class="upper">
+                    <img src="./img1.png" alt="" class="first">
+                    <img src="./img2.png" alt="" class="second">
+                </div>
+                <img class="lower" src="./img3.png" alt="">
             </div>
         </div>
-    </section>
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/d191351939.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

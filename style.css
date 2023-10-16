@@ -1,45 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     box-sizing: border-box;
 }
 body{
     /* display: flex; */
     background-color: rgb(242, 233, 222);
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
 }
-.navbar ul{
-    display: flex;
-    /* border: 1px solid black; */
-    gap: 60px;
-    /* margin-left: 10px; */
-    /* justify-content: space-evenly; */
-}
+
 .navbar{
     display: flex;
-    margin-top: 10px;
-    width: 50%;
-    justify-content: space-evenly;
+    /* margin-top: 10px; */
+    width: 100%;
+    height: 3rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5rem;
+    transition: all 0.6s ease-in-out;
+    /* border: 1px solid black; */
+}
+.items{
+    width: 40%;
+    display: flex;
     align-items: center;
     /* border: 1px solid black; */
+    /* gap: 60px; */
+    /* margin-left: 10px; */
+    justify-content: space-evenly;
 }
 
 .navbar ul li{
     /* padding-left: 70px; */
     /* display: flex; */
     gap: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     font-weight: bolder;
     font-size: 15px;
     /* gap: 30px; */
     /* justify-content: space-evenly; */
     /* border: 1px solid black; */
 }
-nav a{
+nav a, .mobile-items a{
     text-decoration: none;
     color: black;
 }
-section a{
+
+.mobile-navbar{
+    display: none;
+}
+
+.menu{
+    font-size: 1.5rem;
+}
+main a{
     text-decoration: none;
     color: black;
 }
@@ -53,74 +73,206 @@ li a:hover{
     
 }
 
-
 .navbar img{
-    display: flex;
-    margin-left: 40px;
-    height: 30px;
-    width:120px
+    height: 70%;
+    width: 7.5%;
 }
-section{
-    margin-top: 100px;
+main{
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    transition: all 0.6s ease-in-out;
 }
 .main-left-section{
+    width: 50%;
+    padding-left: 10%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     
 }
 .dark{
     font-weight: bolder;
     font-size:50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .light{
     padding-top: 20px;
-    font-weight: 800;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+}
+
+/* main right section  */
+
+
+.main-right-section{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: all 0.6s ease-in-out;
+}
+
+.img-container{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 .upper{
+    width: 100%;
     display: flex;
-    /* justify-content: space-evenly; */
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 3rem;
     /* border: 1px solid black; */
 }
 .upper img{
-    display: flex;
     /* margin-left: 30px; */
-    
-    height: 200px;
-    width: 250px;
-    margin-bottom: 20px;
-    
+    height: 100%;
+    width: 100%;
+    /* margin-bottom: 20px; */   
 }
 .lower{
-    border-radius: 10px;
-    height: 250px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
 }
-.first{
+/* .first{
     padding:20px;
     padding-bottom: 0px;
 }
 .second{
     margin-right: 10px;
     
-}
+} */
 
-.main-left-section button{
-    height: 30px;
-    width: 90px;
+#learn-more{
+    padding: 0.8rem 1.5rem;
     margin-top: 30px;
     background-color: seagreen;
-    color: white;
+    color: black;
     border-style: none;
     border-radius: 5px;
-}
-.main-left-section button a:hover{
     cursor: pointer;
-    
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+.main-left-section a button:hover{
+    width: 100%;
+    height: 100%;
     text-decoration: underline;
 }
 
+.hidden{
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+
+
+
+/*------------- Media Queries---------- */
+
+@media screen and (max-width: 600px){
+    /* For Mobile Phones */
+
+    body{
+        min-height: 120vh;
+        height: auto;
+        padding-top: 0.5rem;
+    }
+
+    .navbar{
+        display: none;
+    }
+    .mobile-navbar{
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    .mobile-items{
+        position: relative;
+        top: 0rem;
+        right: 1rem;
+        transition: all 0.6s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 1rem;
+        width: 100%;
+        font-weight: 600;
+        z-index: 20;
+    }
+
+    .mobile-items li a{
+        text-align: left;
+    }
+
+    main{
+        padding: 2rem 0;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 3rem;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .main-left-section{
+        width: 100%;
+        height: 100%;
+        align-items: flex-start;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .dark{
+        font-size: 2rem;
+    }
+
+    .main-right-section{
+        width: 100%;
+        height: 100%;
+        align-items: flex-start;
+    }
+
+}
+@media screen and (min-width: 601px) and (max-width: 768px){
+    /* For tablets: */
+    body{
+        height: 100vh;
+    }
+
+    .navbar{
+        padding: 0;
+        padding-left: 2rem;
+    }
+    .navbar img{
+        width: 20%;
+    }
+
+    .items{
+        width: 100%;
+    }
+
+    .dark{
+        font-size: 2rem;
+    }
+
+    .light{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px){
+    body{
+        height: 100vh;
+    }
+}
